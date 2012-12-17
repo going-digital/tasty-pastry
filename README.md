@@ -5,25 +5,27 @@ A 4k demo framework for Raspberry Pi
 
 Introduction
 ==
-Tasty-pastry is a work-in-progress demo framework for the Raspberry Pi. This is a long term project, but there are some useful gems already that might be of use to others
+Tasty-pastry is a work-in-progress demo framework for the Raspberry Pi. This is a long term project, but there are some useful gems already that might be of use to others. The size-oriented linking and fast ESSL trig primitives are believed to be state of the art on Raspberry Pi.
 
 Implemented features
 ==
-  * C framework to initialise OpenGL|ES
+  * C framework to initialise OpenGL ES
   * 4k optimised link process
   * LZMA based executable packer
-  * OpenGL|ES shader language fast sin and cos primitives
+  * OpenGL ES shader language fast sin and cos primitives
 
 Shader acceleration
 ==
 In Videocore shader language, the following operations are quick:
   * Addition, subtraction
   * Multiplication
+
 These are SLOOOOW.
   * Division
   * inversesqrt(), sqrt()
   * sin(), cos(), tan()
   * asin(), acos(), atan()
+
 The sinf() implementation is much faster. The intrinsic takes 20 multiplies and 11 additions. sinf() takes 7 multiplies and 6 additions.
 
 
