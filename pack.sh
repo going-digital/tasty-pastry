@@ -24,7 +24,7 @@
 #chmod +x xz$1
 
 # LZMA method (seems to be consistently the best for 4k's)
-# Decompression stub overhead 57 bytes
-echo "a=/tmp/I;tail -n+2 \$0|lzcat>\$a;chmod +x \$a;\$a;rm \$a;exit" > $1.pack
+# Decompression stub overhead 54 bytes
+echo "a=/tmp/I;cp \$0 \$a;tail -n+2 \$0|lzcat>\$a;\$a;rm \$a;exit" > $1.pack
 cat $1 | lzma -v -v -z -C none -7 >> $1.pack
 chmod +x $1.pack
